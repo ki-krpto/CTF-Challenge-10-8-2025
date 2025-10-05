@@ -4,10 +4,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CASE FILE 442 — MARISSA VALE</title>
 <style>
-body{background:#111;color:#ddd;font-family:system-ui,Segoe UI,Roboto,Arial;text-align:center;padding:24px}
+body{background:#111;color:#ddd;font-family:system-ui,Segoe UI,Roboto,Arial;text-align:center;padding:24px; transition: all 0.05s ease-out;}
 .card{max-width:780px;margin:28px auto;background:#0f0f0f;border:1px solid #222;padding:18px;border-radius:8px}
 video{max-width:100%;height:auto;border-radius:4px}
-/* We don't need a.button style since the button is removed, but we'll leave it for now */
 a.button{display:inline-block;margin-top:12px;padding:10px 16px;background:#222;color:#fff;border-radius:6px;text-decoration:none}
 small{color:#999}
 .instruction-box {
@@ -27,7 +26,6 @@ small{color:#999}
 <body>
 <div class="card">
 <h1>Digital Evidence — Last Known Activity</h1>
-<!-- Narrative hook to a forensics report -->
 <p>This is a forensic recovery of Agent Vale's most recent communication. Scrutinize the recording carefully — a critical **access path** to her private logs is embedded within the scene.</p>
 
 
@@ -37,10 +35,8 @@ Your browser does not support the video tag.
 </video>
 
 
-<!-- ENHANCEMENT: The hint is now an official "Investigator's Note" -->
 <p><small>__Investigator's Note:__ Note the desk objects. The digital clock is not showing the time; the numbers it displays are the key to the next directory.</small></p>
 
-<!-- Removed the static link and replaced it with an instruction box -->
 <div class="instruction-box">
     <strong>NEXT STEP: ACCESS LOGS</strong>
     <p>Once you have identified the <strong>four-digit code</strong> from the video, you must manually enter it to access the primary logs.</p>
@@ -48,8 +44,61 @@ Your browser does not support the video tag.
 </div>
 
 <hr>
-<!-- Disclaimer using the enhanced detective language -->
-</div>
 <p><small>This is a fictional educational OSINT exercise used for a coding club. No real persons are involved.</small></p>
+</div>
+
+<script>
+/**
+ * Creates a single, dark, horizontal streak element and removes it quickly.
+ * This simulates a digital glitch or screen corruption.
+ */
+function createGlitchStreak() {
+    const streak = document.createElement('div');
+    const height = Math.random() * 8 + 2; // Height between 2px and 10px
+    const topPosition = Math.random() * window.innerHeight; // Random vertical position
+
+    // Apply inline styles to the streak element
+    streak.style.cssText = `
+        position: fixed;
+        left: 0;
+        top: ${topPosition}px;
+        width: 100%;
+        height: ${height}px;
+        background: rgba(0, 0, 0, 0.75); /* Highly visible dark streak */
+        box-shadow: 0 0 ${height / 2}px rgba(255, 0, 0, 0.2); /* Subtle red halo for static */
+        z-index: 99999;
+        pointer-events: none;
+        opacity: 1;
+        transition: opacity 0.01s; /* Quick transition for removal */
+    `;
+    
+    document.body.appendChild(streak);
+
+    // Fade and remove the streak quickly
+    setTimeout(() => {
+        streak.style.opacity = '0';
+        setTimeout(() => {
+            streak.remove();
+        }, 20); // Remove element after fade transition
+    }, Math.random() * 30 + 10); // Streak lasts for 10ms to 40ms, making it faster
+}
+
+/**
+ * Function to create persistent, erratic screen streaks.
+ */
+function startFlicker() {
+    // Set up the main interval to trigger a burst of streaks constantly (every 200ms)
+    setInterval(() => {
+        // Now, a burst always happens every 200ms for constant flickering
+        const burstDuration = Math.floor(Math.random() * 8) + 3; // 3 to 10 streaks per burst
+        for (let i = 0; i < burstDuration; i++) {
+            // Schedule each individual streak event, spread out slightly
+            setTimeout(createGlitchStreak, Math.random() * 150); 
+        }
+    }, 200); // Check for a flicker burst every 200ms
+}
+
+window.onload = startFlicker;
+</script>
 </body>
 </html>

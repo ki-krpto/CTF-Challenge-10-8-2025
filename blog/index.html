@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Marissa's Notes</title>
+<title>Agent Vale's Encrypted Journal</title>
 <style>
-body{background:#fafafa;color:#111;font-family:Georgia, 'Times New Roman', serif;padding:28px}
+body{background:#fafafa;color:#111;font-family:Georgia, 'Times New Roman', serif;padding:28px; transition: all 0.05s ease-out;} /* Added transition for smoother flicker reset */
 .wrap{max-width:780px;margin:0 auto;background:#fff;padding:18px;border-radius:6px;border:1px solid #ddd}
 img{max-width:100%;height:auto;border-radius:4px}
 .note{background:#fffbcc;padding:10px;border-left:4px solid #e2c200;margin:10px 0}
@@ -15,35 +15,35 @@ img{max-width:100%;height:auto;border-radius:4px}
 </head>
 <body>
 <div class="wrap">
-<h1>Marissa's Notes</h1>
-<p class="lead">A private page recovered from a broken link. Read carefully.</p>
+<h1>Agent Vale's Scrambled Notes</h1>
+<p class="lead">A fragmented journal page recovered from a broken link. Review the artifacts closely. Everything is a clue.</p>
 
 
 <article>
-<h2>Entry — short</h2>
-<p>I keep hearing numbers in the cracks of the house. The clock keeps saying things that can't be right. I tried to set it straight but it keeps going back. I don't know if I'm remembering dates correctly anymore.</p>
+<h2>Journal Entry — Fragment 10.13</h2>
+<p>I keep hearing frequencies in the walls—it's like white noise, but with numbers. The time is wrong; the clock keeps resetting. I tried to correct the time to the designated date, but it snaps back to a constant state. I can't trust my memory of the dates anymore.</p>
 
 
-<p class="note">A page of my planner — I circled a day, but the ink keeps smudging...</p>
+<p class="note">__Physical Artifact:__ A photo of a personal planner. A key day is circled, but the ink smudge is intentional. A message is often hidden in plain sight.</p>
 
 
 <figure>
 <img src="../assets/calendar.jpg" alt="photo of calendar"/>
-<figcaption><small>Zoom the image. Look at the corner near the clock.</small></figcaption>
+<figcaption><small>__Photo Analysis:__ Examine the high-resolution image, particularly the reflection in the monitor and the corner detail near the clock.</small></figcaption>
 </figure>
 
 
-<p>There is also an audio note I left for myself that I can't quite play back cleanly.</p>
+<p>There is also an encrypted voice log I left for myself. The encryption key might be embedded in the sound wave.</p>
 <audio controls>
 <source src="audio.mp3" type="audio/mpeg">
 Your browser cannot play the audio.
 </audio>
 
 
-<p style="margin-top:18px">If you find the <em>last upload</em>, follow it carefully.</p>
+<p style="margin-top:18px">The key to the **Final Upload** is hidden in the **artifacts**. Once you verify the password/key, you can access the archive.</p>
 
 
-<a class="link" href="/archive/">Open last upload</a>
+<a class="link" href="/archive/">ATTEMPT ARCHIVE ACCESS</a>
 
 
 </article>
@@ -52,5 +52,59 @@ Your browser cannot play the audio.
 <hr>
 <p><small>Fictional content for an educational OSINT exercise.</small></p>
 </div>
+
+<script>
+/**
+ * Creates a single, dark, horizontal streak element and removes it quickly.
+ * This simulates a digital glitch or screen corruption.
+ */
+function createGlitchStreak() {
+    const streak = document.createElement('div');
+    const height = Math.random() * 8 + 2; // Height between 2px and 10px
+    const topPosition = Math.random() * window.innerHeight; // Random vertical position
+
+    // Apply inline styles to the streak element
+    streak.style.cssText = `
+        position: fixed;
+        left: 0;
+        top: ${topPosition}px;
+        width: 100%;
+        height: ${height}px;
+        background: rgba(0, 0, 0, 0.75); /* Highly visible dark streak */
+        box-shadow: 0 0 ${height / 2}px rgba(255, 0, 0, 0.2); /* Subtle red halo for static */
+        z-index: 99999;
+        pointer-events: none;
+        opacity: 1;
+        transition: opacity 0.01s; /* Quick transition for removal */
+    `;
+    
+    document.body.appendChild(streak);
+
+    // Fade and remove the streak quickly
+    setTimeout(() => {
+        streak.style.opacity = '0';
+        setTimeout(() => {
+            streak.remove();
+        }, 20); // Remove element after fade transition
+    }, Math.random() * 30 + 10); // Streak lasts for 10ms to 40ms, making it faster
+}
+
+/**
+ * Function to create persistent, erratic screen streaks.
+ */
+function startFlicker() {
+    // Set up the main interval to trigger a burst of streaks constantly (every 200ms)
+    setInterval(() => {
+        // Now, a burst always happens every 200ms for constant flickering
+        const burstDuration = Math.floor(Math.random() * 8) + 3; // 3 to 10 streaks per burst
+        for (let i = 0; i < burstDuration; i++) {
+            // Schedule each individual streak event, spread out slightly
+            setTimeout(createGlitchStreak, Math.random() * 150); 
+        }
+    }, 200); // Check for a flicker burst every 200ms
+}
+
+window.onload = startFlicker;
+</script>
 </body>
 </html>
