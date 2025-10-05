@@ -1,0 +1,129 @@
+# /docs/pov_script.txt
+
+Title: POV — "Marissa's Last Notes"
+Duration target: 40–60 seconds
+Style: first-person POV (no faces). Handheld phone camera, natural lighting, subtle unease. Keep takes short and quiet. Whisper audio must be soft and partly buried in ambient noise.
+Props: desk calendar (10/2022 with 13 circled), analog clock (set to 10:13 or an impossible time like 25:13 using paper overlay), sticky note with short URL or QR, notebook with faint scribble "10/13", small lamp for side lighting, plain background.
+
+SHOT LIST & DIRECTIONS
+
+1) OPEN - ESTABLISH (3–6s)
+- Camera: POV looking down at desk from approximately chest height.
+- Action: slow 2–3 second push-in toward desk. Let camera stabilize on the clock area.
+- Audio: low ambient hum (room), faint far-off traffic or fridge hum. No dialogue.
+- Purpose: frame the environment and the impossible clock.
+
+2) CLOCK FOCUS (3–5s)
+- Camera: gentle pan to the analog clock on the desk. Hold for 2–3 seconds.
+- Direction: linger so viewers can read the time. Time must be clearly legible (10:13) or obviously impossible (25:13).
+- Audio: a near-silent tick; almost imperceptible whisper under the hum saying: (very soft) "ten…"
+
+3) STICKY NOTE / URL (4–6s)
+- Camera: pan right to a small sticky note near the clock (do not show face). Slowly zoom to reveal a short URL or QR printed on the note.
+- Action: hold long enough to allow players to pause the video and read it. The URL should be simple: e.g., `marissa-archive.github.io/blog/` or a short path like `/blog/` displayed clearly.
+- Audio: whisper continues, layered: "thirteen…" (soft, breathy)
+
+4) CALENDAR / NOTE (4–7s)
+- Camera: tilt down to show a corner of the calendar (10/2022). The 13 is circled but slightly smudged. Also show a partially visible notebook page with the scribble "10/13".
+- Direction: camera should intentionally not be perfectly steady — subtle hand movement creates realism.
+- Audio: faint paper shuffle; whisper: "twenty-two…" (very soft, staccato)
+
+5) ROOM PAN / SUBTLE ANOMALY (6–10s)
+- Camera: slow pan left across the desk to show a lamp and a faint reflection in a dark window. In the reflection, you might glimpse a shelf or object that is slightly misaligned compared to the foreground (this is optional).
+- Direction: include a small intentional continuity error — e.g., a book placed differently in the reflection vs foreground — to create a sense that reality is unstable.
+- Audio: faint nonverbal noise (distant creak). Whisper under the noise: a breathy phrase: "remember…"
+
+6) FINAL GLANCE & LINE (8–12s)
+- Camera: move back toward the center of the desk; frame the clock, sticky, and calendar in a single shot. Slight handheld sway as if the person is tired.
+- Action: a hand (briefly visible) reaches into frame to adjust a pen or move a paper but is cut off before the wrist — no face.
+- Audio: clear-but-quiet whispered phrase delivered by the recording: "Find the day she stopped." Then, almost immediately: "ten… thirteen… two thousand twenty-two." (whispered, quiet but audible if headphones are used)
+- End: small camera dip (simulating exhaustion), then the video ends.
+
+NOTES ON WHISPER MIXING
+- Whisper lines must be mixed at low volume, partially masked with room ambience so players have to listen closely or use headphones.
+- Exact whispered lines (to record and layer quietly):
+  1. "ten…"
+  2. "thirteen…"
+  3. "twenty-two…"
+  4. "remember…"
+  5. Final: "Find the day she stopped." then, immediately: "ten… thirteen… two thousand twenty-two."
+
+SFX TIPS
+- Use real ambient room recordings (fan, fridge hum) and keep them low. Avoid music.
+- Add a soft low-frequency rumble (subtle) under the whole track to increase unease.
+
+FILMING TIPS
+- Shoot in 1080p at 30fps on a phone. Use the phone's native camera app to keep the authentic look.
+- Keep lighting natural. Use a desk lamp at low intensity behind the camera to create soft side light.
+- Film multiple takes of each shot with slight variations in pacing so you can edit for the right reveal timing.
+- When showing the URL/QR, ensure it's legible in the frame and not obstructed.
+
+EXPORT & EDIT
+- Keep the full video under 60 seconds for the `insta_pov.mp4` file.
+- Edit whispers to be slightly overlapping with the ambient audio so they are not obvious on first listen.
+- Ensure the final whispered line is the clearest whisper in the mix, just under conversational volume.
+
+
+# /docs/judging_rubric.txt
+
+Google Form fields (copy/paste into a new Google Form):
+1. Team name (Short answer) — "What is your team's name?"
+2. Final answer (Short answer) — "Date of disappearance (MM/DD/YYYY or Month Day, Year)"
+3. Evidence (Paragraph) — "Briefly describe the evidence that led you to this date (one-two sentences). Include which clue(s) you used: insta clip / blog image / audio / archive post."
+4. Screenshot upload (File upload - optional) — "Attach a screenshot showing one clue you used (optional)."
+5. Time submitted (auto-timestamped by Google Forms)
+
+Judging rubric (for organizers) — quick checklist per submission:
+- Correct date? (Exact match or acceptable format — e.g., 10/13/2022 or October 13, 2022)
+- Evidence shows at least one primary clue was used (calendar image, audio whisper transcript, final archive excerpt)
+- If name/date is correct but evidence weak or missing: award partial credit and request screenshot
+
+Scoring (suggested):
+- Full correct date + valid evidence: 100 points
+- Correct date but weak/ambiguous evidence: 70 points (organizer discretion)
+- Wrong date but correct path to archive (reached final page): 40 points
+- Mini-credits:
+  - Found blog URL (first link): 10 pts
+  - Found/played blog audio: 15 pts
+  - Reached archive page: 25 pts
+
+Tiebreaker:
+- Time of correct submission (earlier wins). If multiple correct teams in the same minute, use clarity of evidence (screenshots) as secondary tiebreak.
+
+Ethics & verification note (organizer):
+- This is fictional. Do not use or encourage real OSINT on live people.
+- Verify screenshot timestamps (phone screenshots show time) if teams try to game the system.
+
+
+# /docs/playtest_checklist.txt
+
+Playtest checklist (before the event):
+- [ ] Confirm `index.html`, `blog/index.html`, and `archive/index.html` are uploaded to the repo and render correctly on GitHub Pages.
+- [ ] Place `assets/insta_pov.mp4`, `assets/final.mp4`, `assets/calendar.jpg`, and `blog/audio.mp3` into the repo and confirm links are correct.
+- [ ] Test audio playback on multiple browsers (Chrome, Safari) and on mobile phones.
+- [ ] Verify QR / URL in the POV video points to the live blog path.
+- [ ] Play the full flow from start to finish and time a single-solver run (aim 30–60 minutes).
+- [ ] Test Google Form submissions and auto-timestamping.
+- [ ] Prepare 3 hint cards/messages and ensure organizer knows when to release them.
+- [ ] Backup: ZIP of the repo folder to share directly with teams if Pages has issues.
+
+Hint wording & schedule (organizer-controlled):
+- Hint 1 (15 minutes): "Pause the initial clip and look at the desk — some objects reveal dates when you zoom in." 
+- Hint 2 (35 minutes): "Listen to the audio note on the blog — the numbers are whispered there." 
+- Hint 3 (55 minutes): "If you're stuck, reopen the archive's final upload — the transcript contains the scheduled date." 
+
+Playtesting notes (what to observe when you test):
+- Are clues visible but not too obvious? (test by having someone unfamiliar try to solve)
+- Does the audio whisper sit at the right volume (audible on headphones, subtle on laptop speakers)?
+- Timing: do teams reach the final page in ~45–65 minutes during test runs?
+- Are any clues accidentally discoverable by file inspection (if that's against your event rules)? If so, remove or obfuscate.
+
+
+--
+
+All three files created above are ready. Copy these contents into the repo's `/docs/` folder as:
+- docs/pov_script.txt
+- docs/judging_rubric.txt
+- docs/playtest_checklist.txt
+
+When you're ready I can also paste these same files into the GitHub repo for you (I can't access GitHub directly, but I can produce exact file contents to paste).
