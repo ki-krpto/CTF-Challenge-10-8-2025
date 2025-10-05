@@ -2,19 +2,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Marissa Vale — recovered post</title>
+<title>CASE FILE 442 — MARISSA VALE</title>
 <style>
 body{background:#111;color:#ddd;font-family:system-ui,Segoe UI,Roboto,Arial;text-align:center;padding:24px}
 .card{max-width:780px;margin:28px auto;background:#0f0f0f;border:1px solid #222;padding:18px;border-radius:8px}
 video{max-width:100%;height:auto;border-radius:4px}
+/* We don't need a.button style since the button is removed, but we'll leave it for now */
 a.button{display:inline-block;margin-top:12px;padding:10px 16px;background:#222;color:#fff;border-radius:6px;text-decoration:none}
 small{color:#999}
+.instruction-box {
+    background: #1a1a1a;
+    border: 1px solid #444;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 6px;
+    text-align: left;
+    font-size: 0.95em;
+}
+.instruction-box strong {
+    color: #ffcc00; /* Highlight color for instructions */
+}
 </style>
 </head>
 <body>
 <div class="card">
-<h1>Marissa Vale — recent activity</h1>
-<p>We recovered a recent-looking post from Marissa's account. Watch carefully — it contains a hint to her private archive.</p>
+<h1>Digital Evidence — Last Known Activity</h1>
+<!-- Narrative hook to a forensics report -->
+<p>This is a forensic recovery of Agent Vale's most recent communication. Scrutinize the recording carefully — a critical **access path** to her private logs is embedded within the scene.</p>
 
 
 <video id="pov" controls playsinline>
@@ -23,14 +37,19 @@ Your browser does not support the video tag.
 </video>
 
 
-<p><small>Hint: notice the desk objects and the small paper near the clock.</small></p>
+<!-- ENHANCEMENT: The hint is now an official "Investigator's Note" -->
+<p><small>__Investigator's Note:__ Note the desk objects. The digital clock is not showing the time; the numbers it displays are the key to the next directory.</small></p>
 
-
-<p><a class="button" href="blog/">Open the blog archive</a></p>
-
+<!-- Removed the static link and replaced it with an instruction box -->
+<div class="instruction-box">
+    <strong>NEXT STEP: ACCESS LOGS</strong>
+    <p>Once you have identified the <strong>four-digit code</strong> from the video, you must manually enter it to access the primary logs.</p>
+    <p style="margin-bottom: 0;">If the current URL is `.../CTF-Challenge/index.html`, you must change the URL path to: <code style="background: #000; padding: 2px 4px; border-radius: 3px;">.../CTF-Challenge/[YOUR_CODE]_logs/</code></p>
+</div>
 
 <hr>
-<p><small>This is a fictional educational OSINT exercise used for a coding club. No real persons are involved.</small></p>
+<!-- Disclaimer using the enhanced detective language -->
 </div>
+<p><small>This is a fictional educational OSINT exercise used for a coding club. No real persons are involved.</small></p>
 </body>
 </html>
