@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Submit — Marissa CTF</title>
+<style>
+body{background:#fafafa;color:#111;font-family:system-ui;padding:28px;text-align:center}
+.card{max-width:680px;margin:36px auto;padding:18px;background:#fff;border-radius:8px;border:1px solid #ddd}
+input,textarea{width:100%;padding:8px;border-radius:6px;border:1px solid #ccc;margin-top:8px}
+button{margin-top:10px;padding:10px 14px;border-radius:6px;background:#222;color:#fff;border:none}
+small{color:#666}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>Submit your answer</h1>
+<p>Best: use the Google Form link below (recommended). If you prefer, paste your answer here and provide brief evidence.</p>
+
+
+<p><a href="https://forms.gle/REPLACE_WITH_YOUR_FORM" target="_blank">Google Form: Submit answer</a></p>
+
+
+<hr>
+<form onsubmit="alert('Offline submit: copy the answer and paste in the Google Form.');return false;">
+<label>Team name</label>
+<input placeholder="Team Alpha" />
+<label>Your answer (date of disappearance)</label>
+<input placeholder="MM/DD/YYYY" />
+<label>Evidence (one-line summary)</label>
+<textarea placeholder="Where did you find the date? e.g. calendar image, audio whisper"></textarea>
+<button type="submit">Submit (offline)</button>
+</form>
+</div>
+</body>
+</html>
