@@ -1,10 +1,9 @@
-Marissa Vale — quick README
+Lila Blackwood — Notes
 
+If you find this repo, this is the repo for the CTF challenge I made.
+No hints are on here, if you wish for a hint dm Erik Shaver on Instagram "hint"
 
-1) Put this folder on your Raspberry Pi in ~/ctf_site
-2) Run: python3 -m http.server 8000
-3) Visit: http://<PI_IP>:8000/
-
+--- checklist ---
 
 Files to add before event:
 - assets/insta_pov.mp4 (POV video showing impossible clock and sticky note with URL.)
@@ -12,6 +11,3 @@ Files to add before event:
 - assets/calendar.jpg (photo of planner with 10/13 circled)
 - blog/audio.mp3 (faint whisper of: "ten... thirteen... twenty-two")
 - Update submit.html Google Form link.
-
-
-Video script, props, and hosting instructions are included in the code editor. Good luck and have fun.
