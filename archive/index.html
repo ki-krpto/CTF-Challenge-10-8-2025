@@ -5,14 +5,56 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Archive — Lila Blackwood's Final Transmission</title>
 <style>
-body{background:#0b0b0b;color:#eee;font-family:'Segoe UI',system-ui,Arial;padding:24px; transition: all 0.05s ease-out;}
-.box{max-width:760px;margin:30px auto;background:#0f0f0f;padding:18px;border-radius:8px;border:1px solid #222}
-.muted{color:#bbb}
-video{max-width:100%;height:auto;border-radius:6px;border:1px solid #333;margin-top:10px}
-pre{background:#111;padding:10px;border-radius:6px;overflow:auto}
-input[type="text"]{padding:8px 12px;border-radius:6px;border:1px solid #555;background:#222;color:#eee;margin-right:6px;font-family:'Courier New',monospace;}
-button{padding:8px 14px;background:#880000;color:#fff;border:none;border-radius:6px;font-family:'Courier New',monospace;cursor:pointer;font-weight:bold;text-shadow:0 0 4px #000;}
-button:hover{background:#aa0000;}
+body {
+    background:#0b0b0b;
+    color:#eee;
+    font-family:'Segoe UI',system-ui,Arial;
+    padding:24px;
+    transition: all 0.05s ease-out;
+}
+.box {
+    max-width:760px;
+    margin:30px auto;
+    background:#0f0f0f;
+    padding:18px;
+    border-radius:8px;
+    border:1px solid #222;
+}
+.muted {color:#bbb;}
+video {
+    max-width:100%;
+    height:auto;
+    border-radius:6px;
+    border:1px solid #333;
+    margin-top:10px;
+}
+pre {
+    background:#111;
+    padding:10px;
+    border-radius:6px;
+    overflow:auto;
+}
+input[type="text"] {
+    padding:8px 12px;
+    border-radius:6px;
+    border:1px solid #555;
+    background:#222;
+    color:#eee;
+    margin-right:6px;
+    font-family:'Courier New',monospace;
+}
+button {
+    padding:8px 14px;
+    background:#880000;
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    font-family:'Courier New',monospace;
+    cursor:pointer;
+    font-weight:bold;
+    text-shadow:0 0 4px #000;
+}
+button:hover {background:#aa0000;}
 </style>
 </head>
 <body>
@@ -21,14 +63,14 @@ button:hover{background:#aa0000;}
 <p class="muted">There seems to be a mixup of the dates...what could this mean...</p>
 
 <video controls>
-<source src="1006(1)" type="video/mp4">
+<source src="1006(1).mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 
 <h3>Forensics Log: Metadata Analysis</h3>
 <pre>"Scheduled upload failed — October 13, 2022. I set it to send **October 15, 2022**, but it never went."</pre>
 
-<p>Based on all recovered evidence (Visual, Audio, and Metadata), enter the **intended final date of Lila's disappearance** below:</p>
+<p>Based on all recovered evidence (Visual, Audio, and Metadata), enter the <strong>intended final date of Lila's disappearance</strong> below:</p>
 
 <div style="margin-top:20px;">
 <input type="text" id="dateReport" placeholder="Enter date here (MM/DD/YYYY)">
@@ -39,29 +81,49 @@ Your browser does not support the video tag.
 </div>
 
 <script>
+// Glitch streaks
 function createGlitchStreak() {
     const streak = document.createElement('div');
-    const height = Math.random() * 8 + 2;
-    const topPosition = Math.random() * window.innerHeight;
+    const height = Math.random()*8 + 2;
+    const topPosition = Math.random()*window.innerHeight;
     streak.style.cssText = `
         position: fixed; left:0; top:${topPosition}px; width:100%; height:${height}px;
-        background: rgba(255,0,0,0.5); box-shadow:0 0 ${height/2}px rgba(255,0,0,0.2);
-        z-index:99999; pointer-events:none; opacity:1; transition:opacity 0.01s;`;
+        background: rgba(255,0,0,0.5);
+        box-shadow:0 0 ${height/2}px rgba(255,0,0,0.2);
+        z-index:99999;
+        pointer-events:none;
+        opacity:1;
+        transition:opacity 0.01s;
+    `;
     document.body.appendChild(streak);
-    setTimeout(()=>{streak.style.opacity='0'; setTimeout(()=>streak.remove(),20);}, Math.random()*30+10);
+    setTimeout(()=>{
+        streak.style.opacity='0';
+        setTimeout(()=>streak.remove(),20);
+    }, Math.random()*30+10);
 }
-function startFlicker(){
+
+function startFlicker() {
     setInterval(()=>{
         const burstDuration = Math.floor(Math.random()*8)+3;
-        for(let i=0;i<burstDuration;i++){ setTimeout(createGlitchStreak, Math.random()*150); }
+        for(let i=0;i<burstDuration;i++){
+            setTimeout(createGlitchStreak, Math.random()*150);
+        }
     },200);
 }
 window.onload = startFlicker;
 
-function submitReport(){
-    // Users are submitting the date as their final report.
-    // Redirect to final report page.
-    window.location.href="/submit.html";
+// Submit report logic
+function submitReport() {
+    const userInput = document.getElementById('dateReport').value.trim();
+    const correctDate = "10/15/2022";
+
+    if(userInput === correctDate){
+        // Correct date → archive submit page
+        window.location.href = "https://ki-krpto.github.io/CTF-Challenge-10-8-2025/archive/submit";
+    } else {
+        // Wrong date → rickroll
+        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }
 }
 </script>
 </body>
