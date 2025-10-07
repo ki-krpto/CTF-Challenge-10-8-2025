@@ -38,34 +38,47 @@ audio {
   margin-top:10px;
   width:100%;
 }
+button {
+  margin-top:10px;
+  padding:8px 12px;
+  background:#222;
+  color:#fff;
+  border-radius:6px;
+  border:none;
+  cursor:pointer;
+}
+button:hover {
+  background:#444;
+}
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>Lila Blackwood's Scrambled Notes</h1>
-  <p class="lead">A fragmented journal page recovered from a broken link. Review the artifacts closely. Everything is a clue.</p>
+  <p class="lead">A fragmented journal page recovered from a broken link. Review the artifacts closely — everything may be a clue.</p>
   
   <article>
     <h2>Journal Entry — Fragment 10.13</h2>
-    <p>I keep hearing frequencies in the walls—it's like white noise, but with numbers. The time is wrong; the clock keeps resetting. I tried to correct the time to the designated date, but it snaps back to a constant state. I can't trust my memory of the dates anymore.</p>
+    <p>I keep hearing frequencies in the walls — it's like white noise, but with numbers. The time is wrong; the clock keeps resetting. I tried to correct the time to the designated date, but it snaps back to a constant state. I can't trust my memory of the dates anymore.</p>
 
     <!-- Artifact #1: Planner Screenshot -->
     <div class="note">
       <strong>Artifact #1: Planner Screenshot</strong><br>
-      A screenshot of an online planner. October 10th is circled; it may be a cipher.
+      A screenshot of an online planner. October 10th is circled; it may be a cipher. This was one of Lila's final messages before she disappeared.
     </div>
     <figure>
       <img src="Calendar.png" alt="Online planner screenshot"/>
-      <figcaption><small>Inspect the circled date carefully.</small></figcaption>
+      <figcaption><small>Inspect the circled date carefully — it may hold a hidden message.</small></figcaption>
     </figure>
 
     <!-- Artifact #2: Encrypted Voice Log -->
     <div class="note">
       <strong>Artifact #2: Encrypted Voice Log</strong><br>
-      A short distorted voice note labeled “self-reminder.”
+      A distorted audio recording left as a self-reminder. Its hidden Morse code may reveal a key message.
     </div>
-    <audio controls>
-      <source src="audio.mp3" type="audio/mpeg">
+    <button onclick="document.getElementById('morseAudio').play()">Play Last Message</button>
+    <audio id="morseAudio" controls>
+      <source src="morse1.wav" type="audio/wav">
       Your browser cannot play the audio.
     </audio>
 
@@ -77,12 +90,12 @@ audio {
 <script>
 /**
  * Creates a single, dark, horizontal streak element and removes it quickly.
- * This simulates a digital glitch or screen corruption.
+ * Simulates a digital glitch or screen corruption.
  */
 function createGlitchStreak() {
     const streak = document.createElement('div');
     const height = Math.random() * 8 + 2; // Height between 2px and 10px
-    const topPosition = Math.random() * window.innerHeight; // Random vertical position
+    const topPosition = Math.random() * window.innerHeight;
 
     streak.style.cssText = `
         position: fixed;
@@ -102,9 +115,7 @@ function createGlitchStreak() {
 
     setTimeout(() => {
         streak.style.opacity = '0';
-        setTimeout(() => {
-            streak.remove();
-        }, 20);
+        setTimeout(() => streak.remove(), 20);
     }, Math.random() * 30 + 10);
 }
 
