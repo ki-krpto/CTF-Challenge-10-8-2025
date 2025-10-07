@@ -52,19 +52,17 @@ audio {
     <!-- Artifact #1: Planner Screenshot -->
     <div class="note">
       <strong>Artifact #1: Planner Screenshot</strong><br>
-      A screenshot of an online planner. One day (October 13) is marked with a subtle clue.<br>
-      <em>Hint: The letters hidden on that date are faint and require close inspection. Numbers might not be dates—they could be a cipher.</em>
+      A screenshot of an online planner. October 10th is circled; it may be a cipher.
     </div>
     <figure>
       <img src="Calendar.png" alt="Online planner screenshot"/>
-      <figcaption><small>Inspect October 13 carefully — faint letters are hidden as part of the cipher.</small></figcaption>
+      <figcaption><small>Inspect the circled date carefully.</small></figcaption>
     </figure>
 
     <!-- Artifact #2: Encrypted Voice Log -->
     <div class="note">
       <strong>Artifact #2: Encrypted Voice Log</strong><br>
-      A short distorted voice note labeled “self-reminder.”<br>
-      <em>Hint: Listen carefully — the numbers hidden in the audio are part of the access key.</em>
+      A short distorted voice note labeled “self-reminder.”
     </div>
     <audio controls>
       <source src="audio.mp3" type="audio/mpeg">
@@ -75,5 +73,51 @@ audio {
     <p><small>Fictional content for an educational OSINT exercise.</small></p>
   </article>
 </div>
+
+<script>
+/**
+ * Creates a single, dark, horizontal streak element and removes it quickly.
+ * This simulates a digital glitch or screen corruption.
+ */
+function createGlitchStreak() {
+    const streak = document.createElement('div');
+    const height = Math.random() * 8 + 2; // Height between 2px and 10px
+    const topPosition = Math.random() * window.innerHeight; // Random vertical position
+
+    streak.style.cssText = `
+        position: fixed;
+        left: 0;
+        top: ${topPosition}px;
+        width: 100%;
+        height: ${height}px;
+        background: rgba(0, 0, 0, 0.75);
+        box-shadow: 0 0 ${height / 2}px rgba(255, 0, 0, 0.2);
+        z-index: 99999;
+        pointer-events: none;
+        opacity: 1;
+        transition: opacity 0.01s;
+    `;
+    
+    document.body.appendChild(streak);
+
+    setTimeout(() => {
+        streak.style.opacity = '0';
+        setTimeout(() => {
+            streak.remove();
+        }, 20);
+    }, Math.random() * 30 + 10);
+}
+
+function startFlicker() {
+    setInterval(() => {
+        const burstDuration = Math.floor(Math.random() * 8) + 3;
+        for (let i = 0; i < burstDuration; i++) {
+            setTimeout(createGlitchStreak, Math.random() * 150);
+        }
+    }, 200);
+}
+
+window.onload = startFlicker;
+</script>
 </body>
 </html>
