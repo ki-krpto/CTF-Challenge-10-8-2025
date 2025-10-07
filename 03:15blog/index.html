@@ -5,46 +5,75 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Lila Blackwood's Encrypted Journal</title>
 <style>
-body{background:#fafafa;color:#111;font-family:Georgia, 'Times New Roman', serif;padding:28px; transition: all 0.05s ease-out;}
-.wrap{max-width:780px;margin:0 auto;background:#fff;padding:18px;border-radius:6px;border:1px solid #ddd}
-img{max-width:100%;height:auto;border-radius:4px}
-.note{background:#fffbcc;padding:10px;border-left:4px solid #e2c200;margin:10px 0}
-.lead{color:#555}
+body {
+  background:#fafafa;
+  color:#111;
+  font-family:Georgia, 'Times New Roman', serif;
+  padding:28px;
+  transition: all 0.05s ease-out;
+}
+.wrap {
+  max-width:780px;
+  margin:0 auto;
+  background:#fff;
+  padding:18px;
+  border-radius:6px;
+  border:1px solid #ddd;
+}
+img {
+  max-width:100%;
+  height:auto;
+  border-radius:4px;
+}
+.note {
+  background:#fffbcc;
+  padding:10px;
+  border-left:4px solid #e2c200;
+  margin:10px 0;
+}
+.lead {
+  color:#555;
+}
+audio {
+  margin-top:10px;
+  width:100%;
+}
 </style>
 </head>
 <body>
 <div class="wrap">
-<h1>Lila Blackwood's Scrambled Notes</h1>
-<p class="lead">A fragmented journal page recovered from a broken link. Review the artifacts closely. Everything is a clue.</p>
-<article>
-<h2>Journal Entry — Fragment 10.13</h2>
-<p>I keep hearing frequencies in the walls—it's like white noise, but with numbers. The time is wrong; the clock keeps resetting. I tried to correct the time to the designated date, but it snaps back to a constant state. I can't trust my memory of the dates anymore.</p>
+  <h1>Lila Blackwood's Scrambled Notes</h1>
+  <p class="lead">A fragmented journal page recovered from a broken link. Review the artifacts closely. Everything is a clue.</p>
+  
+  <article>
+    <h2>Journal Entry — Fragment 10.13</h2>
+    <p>I keep hearing frequencies in the walls—it's like white noise, but with numbers. The time is wrong; the clock keeps resetting. I tried to correct the time to the designated date, but it snaps back to a constant state. I can't trust my memory of the dates anymore.</p>
 
-<!-- Artifact #1: Planner Photograph -->
-<div class="note">
-<strong>Artifact #1: Planner Photograph</strong><br>
-A photo of a personal planner. One day is circled, but the ink smudge is deliberate.<br>
-<em>Hint: Check the reflection in the monitor and the lower-right corner near the clock. Numbers might not be dates—they could be coordinates or a cipher.</em>
-</div>
-<figure>
-<img src="Calendar.png" alt="photo of calendar"/>
-<figcaption><small>Examine the high-resolution image, particularly the reflection in the monitor and the corner detail near the clock.</small></figcaption>
-</figure>
+    <!-- Artifact #1: Planner Screenshot -->
+    <div class="note">
+      <strong>Artifact #1: Planner Screenshot</strong><br>
+      A screenshot of an online planner. One day (October 13) is marked with a subtle clue.<br>
+      <em>Hint: The letters hidden on that date are faint and require close inspection. Numbers might not be dates—they could be a cipher.</em>
+    </div>
+    <figure>
+      <img src="Calendar.png" alt="Online planner screenshot"/>
+      <figcaption><small>Inspect October 13 carefully — faint letters are hidden as part of the cipher.</small></figcaption>
+    </figure>
 
-<!-- Artifact #2: Encrypted Voice Log -->
-<div class="note">
-<strong>Artifact #2: Encrypted Voice Log</strong><br>
-A short distorted voice note labeled “self-reminder.”<br>
-<em>Hint: The waveform might hide a pattern—peaks could represent binary, Morse, or a Caesar key. The noise floor itself may be the message.</em>
-</div>
-<audio controls>
-<source src="audio.mp3" type="audio/mpeg">
-Your browser cannot play the audio.
-</audio>
+    <!-- Artifact #2: Encrypted Voice Log -->
+    <div class="note">
+      <strong>Artifact #2: Encrypted Voice Log</strong><br>
+      A short distorted voice note labeled “self-reminder.”<br>
+      <em>Hint: Listen carefully — the numbers hidden in the audio are part of the access key.</em>
+    </div>
+    <audio controls>
+      <source src="audio.mp3" type="audio/mpeg">
+      Your browser cannot play the audio.
+    </audio>
 
-<hr>
-<p><small>Fictional content for an educational OSINT exercise.</small></p>
-</article>
+    <hr>
+    <p><small>Fictional content for an educational OSINT exercise.</small></p>
+  </article>
 </div>
 </body>
 </html>
