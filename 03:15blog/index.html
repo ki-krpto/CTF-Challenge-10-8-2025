@@ -6,8 +6,8 @@
 <title>Lila Blackwood's Encrypted Journal</title>
 <style>
 body {
-  background:#fafafa;
-  color:#111;
+  background:#111;
+  color:#eee;
   font-family:Georgia, 'Times New Roman', serif;
   padding:28px;
   transition: all 0.05s ease-out;
@@ -15,40 +15,56 @@ body {
 .wrap {
   max-width:780px;
   margin:0 auto;
-  background:#fff;
+  background:#1a1a1a;
   padding:18px;
   border-radius:6px;
-  border:1px solid #ddd;
+  border:1px solid #333;
 }
 img {
   max-width:100%;
   height:auto;
   border-radius:4px;
+  border:1px solid #555;
 }
 .note {
-  background:#fffbcc;
+  background:#222;
   padding:10px;
-  border-left:4px solid #e2c200;
+  border-left:4px solid #880000;
   margin:10px 0;
+  color:#eee;
 }
 .lead {
-  color:#555;
-}
-audio {
-  margin-top:10px;
-  width:100%;
+  color:#ccc;
 }
 button {
   margin-top:10px;
-  padding:8px 12px;
-  background:#222;
+  padding:10px 14px;
+  background:#880000;
   color:#fff;
   border-radius:6px;
   border:none;
+  font-family: 'Courier New', monospace;
   cursor:pointer;
+  font-weight:bold;
+  text-shadow: 0 0 4px #000;
 }
 button:hover {
-  background:#444;
+  background:#aa0000;
+}
+input[type="text"] {
+  padding:8px 12px;
+  border-radius:6px;
+  border:1px solid #555;
+  background:#222;
+  color:#eee;
+  font-family: 'Courier New', monospace;
+  margin-right:6px;
+}
+label {
+  font-family: 'Courier New', monospace;
+}
+audio {
+  display:none;
 }
 </style>
 </head>
@@ -76,11 +92,18 @@ button:hover {
       <strong>Artifact #2: Encrypted Voice Log</strong><br>
       A distorted audio recording left as a self-reminder. Its hidden Morse code may reveal a key message.
     </div>
-    <button onclick="document.getElementById('morseAudio').play()">Play Last Message</button>
-    <audio id="morseAudio" controls>
+    <button onclick="document.getElementById('morseAudio').play()">▶ PLAY LAST MESSAGE</button>
+    <audio id="morseAudio">
       <source src="morse1.wav" type="audio/wav">
       Your browser cannot play the audio.
     </audio>
+
+    <!-- Passcode input -->
+    <div class="note" style="margin-top:20px;">
+      <label for="passcode">Enter Passcode:</label>
+      <input type="text" id="passcode" placeholder="Enter code here">
+      <button onclick="checkPasscode()">Submit</button>
+    </div>
 
     <hr>
     <p><small>Fictional content for an educational OSINT exercise.</small></p>
@@ -88,47 +111,48 @@ button:hover {
 </div>
 
 <script>
-/**
- * Creates a single, dark, horizontal streak element and removes it quickly.
- * Simulates a digital glitch or screen corruption.
- */
+/** Glitch streaks for horror effect */
 function createGlitchStreak() {
     const streak = document.createElement('div');
-    const height = Math.random() * 8 + 2; // Height between 2px and 10px
+    const height = Math.random() * 8 + 2;
     const topPosition = Math.random() * window.innerHeight;
-
     streak.style.cssText = `
         position: fixed;
         left: 0;
         top: ${topPosition}px;
         width: 100%;
         height: ${height}px;
-        background: rgba(0, 0, 0, 0.75);
-        box-shadow: 0 0 ${height / 2}px rgba(255, 0, 0, 0.2);
+        background: rgba(255,0,0,0.5);
+        box-shadow: 0 0 ${height/2}px rgba(255,0,0,0.2);
         z-index: 99999;
         pointer-events: none;
-        opacity: 1;
-        transition: opacity 0.01s;
+        opacity:1;
+        transition:opacity 0.01s;
     `;
-    
     document.body.appendChild(streak);
-
-    setTimeout(() => {
-        streak.style.opacity = '0';
-        setTimeout(() => streak.remove(), 20);
-    }, Math.random() * 30 + 10);
+    setTimeout(() => { streak.style.opacity='0'; setTimeout(()=>streak.remove(),20); }, Math.random()*30+10);
 }
 
 function startFlicker() {
     setInterval(() => {
-        const burstDuration = Math.floor(Math.random() * 8) + 3;
-        for (let i = 0; i < burstDuration; i++) {
-            setTimeout(createGlitchStreak, Math.random() * 150);
+        const burstDuration = Math.floor(Math.random()*8)+3;
+        for(let i=0;i<burstDuration;i++){
+            setTimeout(createGlitchStreak, Math.random()*150);
         }
-    }, 200);
+    },200);
 }
-
 window.onload = startFlicker;
+
+/** Passcode check */
+function checkPasscode(){
+    const input = document.getElementById('passcode').value.trim();
+    const correct = "ARCHIVE1013"; // your code
+    if(input.toUpperCase() === correct){
+        window.location.href = "https://ki-krpto.github.io/CTF-Challenge-10-8-2025/archive/";
+    } else {
+        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // rickroll
+    }
+}
 </script>
 </body>
 </html>
